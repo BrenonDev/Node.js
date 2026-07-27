@@ -108,3 +108,15 @@ console.log("=== CRIANDO UM PROJETO NODE.JS ===")
 
 
 // ======================================================================
+
+
+console.log("=== EXECUTANDO UM ARQUIVO JAVASCRIPT ===")
+
+// Para executar um arquivo JavaScript usando o Node.js, você pode usar o comando `node` seguido do nome do arquivo. Por exemplo, se você tiver um arquivo chamado `server.js`, você pode executá-lo com o seguinte comando no terminal:
+
+// node server.js
+
+// Isso fará com que o Node.js execute o código contido no arquivo `server.js` e exiba qualquer saída no terminal.
+
+
+// ======================================================================
