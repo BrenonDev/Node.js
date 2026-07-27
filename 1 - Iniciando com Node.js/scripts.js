@@ -88,3 +88,23 @@ passam pela Call Stack, enquanto as assíncronas aguardam na Event Queue até
 estarem prontas. Assim, o sistema continua atendendo novas requisições sem
 bloquear a execução principal.
 */
+
+
+// ======================================================================
+
+
+console.log("=== CRIANDO UM PROJETO NODE.JS ===")
+
+// Para criar um projeto Node.js, você precisa ter o Node.js instalado em sua máquina. Você pode baixar o instalador do Node.js no site oficial: https://nodejs.org/.
+
+// Após a instalação, você pode verificar se o Node.js foi instalado corretamente abrindo o terminal e digitando o comando `node -v`. Isso exibirá a versão do Node.js instalada em sua máquina.
+
+// Para iniciar um novo projeto Node.js, siga os passos abaixo:
+
+// 1. Crie uma nova pasta para o seu projeto e navegue até ela no terminal.
+// 2. Execute o comando `npm init` para iniciar um novo projeto Node.js. Isso criará um arquivo `package.json` que contém informações sobre o seu projeto.
+// 3. Siga as instruções no terminal para preencher as informações do projeto, como nome, versão, descrição, ponto de entrada (entry point), etc.
+// 4. Após concluir o processo, você terá um arquivo `package.json` pronto para gerenciar as dependências do seu projeto.
+
+
+// ======================================================================
