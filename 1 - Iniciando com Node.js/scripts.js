@@ -182,3 +182,18 @@ console.log("=== NODE WATCH ===");
 
 
 // ======================================================================
+
+
+console.log("=== CRIANDO SCRIPTS PERSONALIZADOS ===");
+
+// No arquivo `package.json`, você pode definir scripts personalizados que podem ser executados usando o comando `npm run <nome-do-script>`. Por exemplo, você pode adicionar um script para iniciar o servidor com o Node Watch:
+
+// package.json:
+
+/*
+"scripts": {
+  "dev": "node --watch server.js"
+}
+*/
+
+// Para executar o script, você pode usar o comando `npm run dev` no terminal. Isso iniciará o servidor e permitirá que ele seja reiniciado automaticamente sempre que você fizer alterações no arquivo `server.js`.
