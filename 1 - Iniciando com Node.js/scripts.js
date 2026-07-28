@@ -1,4 +1,4 @@
-console.log("=== CONHECENDO O NODE.JS ===")
+console.log("=== CONHECENDO O NODE.JS ===");
 
 // O Node.js não é uma linguagem de programação. Javascript é a linguagem de programação que o Node é capaz de executar.
 
@@ -20,7 +20,7 @@ console.log("=== CONHECENDO O NODE.JS ===")
 // ======================================================================
 
 
-console.log("=== O FUNCIONAMENTO DO NODE.JS ===")
+console.log("=== O FUNCIONAMENTO DO NODE.JS ===");
 
 // ANALOGIA...
 
@@ -67,13 +67,13 @@ console.log("=== O FUNCIONAMENTO DO NODE.JS ===")
    - Executa em uma única thread.
    - Não bloqueia enquanto aguarda operações de entrada/saída.
    |
-   |-- Operação síncrona ----------------------> [CALL STACK]
-   |                                              - Tarefas executadas em sequência.
-   |                                              - A próxima tarefa espera a anterior terminar.
+   |-- Operação síncrona --------> [CALL STACK]
+   |                                - Tarefas executadas em sequência.
+   |                                - A próxima tarefa espera a anterior terminar.
    |
-   |-- Operação assíncrona --------------------> [EVENT QUEUE]
-                                                  - A tarefa aguarda fora da pilha principal.
-                                                  - Quando fica pronta, retorna para execução.
+   |-- Operação assíncrona ------> [EVENT QUEUE]
+   |                                - A tarefa aguarda fora da pilha principal.
+   |                                - Quando fica pronta, retorna para execução.
    |
    v
 [OPERAÇÃO CONCLUÍDA]
@@ -93,7 +93,7 @@ bloquear a execução principal.
 // ======================================================================
 
 
-console.log("=== CRIANDO UM PROJETO NODE.JS ===")
+console.log("=== CRIANDO UM PROJETO NODE.JS ===");
 
 // Para criar um projeto Node.js, você precisa ter o Node.js instalado em sua máquina. Você pode baixar o instalador do Node.js no site oficial: https://nodejs.org/.
 
@@ -110,7 +110,7 @@ console.log("=== CRIANDO UM PROJETO NODE.JS ===")
 // ======================================================================
 
 
-console.log("=== EXECUTANDO UM ARQUIVO JAVASCRIPT ===")
+console.log("=== EXECUTANDO UM ARQUIVO JAVASCRIPT ===");
 
 // Para executar um arquivo JavaScript usando o Node.js, você pode usar o comando `node` seguido do nome do arquivo. Por exemplo, se você tiver um arquivo chamado `server.js`, você pode executá-lo com o seguinte comando no terminal:
 
@@ -122,7 +122,7 @@ console.log("=== EXECUTANDO UM ARQUIVO JAVASCRIPT ===")
 // ======================================================================
 
 
-console.log("=== IMPORT COM COMMONJS E ES MODULES ===")
+console.log("=== IMPORT COM COMMONJS E ES MODULES ===");
 
 // O Node.js suporta dois sistemas de módulos: CommonJS e ES Modules. O CommonJS é o sistema de módulos tradicional do Node.js, enquanto os ES Modules são baseados na especificação ECMAScript e são mais recentes.
 
@@ -144,7 +144,7 @@ console.log("=== IMPORT COM COMMONJS E ES MODULES ===")
 // ======================================================================
 
 
-console.log("=== CRIANDO O PRIMEIRO SERVIDOR NODE.JS ===")
+console.log("=== CRIANDO O PRIMEIRO SERVIDOR NODE.JS ===");
 
 // Para criar um servidor básico usando Node.js, você pode usar o módulo `http` para criar um servidor HTTP. Aqui está um exemplo simples de como criar um servidor que responde com "Hello World!" para todas as requisições:
 
@@ -165,6 +165,20 @@ server.listen(3333);
 */
 
 // Para executar o servidor, salve o código acima em um arquivo chamado `server.js` e execute o comando `node server.js` no terminal. O servidor estará ouvindo na porta 3333 e você poderá acessar a resposta "Hello World!" abrindo um navegador e digitando `http://localhost:3333` na barra de endereços.
+
+
+// ======================================================================
+
+
+console.log("=== NODE WATCH ===");
+
+// O Node Watch é uma ferramenta que permite monitorar alterações em arquivos e reiniciar automaticamente o servidor quando essas alterações ocorrem. Isso é útil durante o desenvolvimento, pois você não precisa reiniciar manualmente o servidor sempre que fizer alterações no código.
+
+// Para usar o Node Watch, você pode executar o servidor com o seguinte comando no terminal:
+
+// node --watch server.js
+
+// Isso fará com que o Node.js monitore o arquivo `server.js` e reinicie o servidor automaticamente sempre que você salvar alterações nesse arquivo.
 
 
 // ======================================================================
