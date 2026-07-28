@@ -130,11 +130,41 @@ console.log("=== IMPORT COM COMMONJS E ES MODULES ===")
 
 // const http = require("http");
 
+// Para usar CommonJS, você precisa garantir que o arquivo tenha a extensão `.js` e que o campo `"type"` está definido como `"commonjs"` no arquivo `package.json` do seu projeto (ou não esteja definido, já que CommonJS é o padrão).
+
 // Para importar módulos usando ES Modules, você usa a palavra-chave `import`. Por exemplo:
 
 // import http from "node:http";
 
+// Para usar ES Modules, você precisa garantir que o arquivo tenha a extensão `.mjs` ou que o campo `"type": "module"` esteja definido no arquivo `package.json` do seu projeto.
+
 // A escolha entre CommonJS e ES Modules depende do seu projeto e das suas preferências. O CommonJS é amplamente utilizado em projetos Node.js existentes, enquanto os ES Modules são recomendados para novos projetos devido à sua compatibilidade com a especificação ECMAScript.
+
+
+// ======================================================================
+
+
+console.log("=== CRIANDO O PRIMEIRO SERVIDOR NODE.JS ===")
+
+// Para criar um servidor básico usando Node.js, você pode usar o módulo `http` para criar um servidor HTTP. Aqui está um exemplo simples de como criar um servidor que responde com "Hello World!" para todas as requisições:
+
+// server.js:
+
+/*
+// Importando o módulo http usando ES Modules
+import http from "node:http";
+
+// Criando o servidor
+const server = http.createServer((request, response) => {
+   // Enviando a resposta "Hello World!" para o cliente
+   return response.end("Hello World!")
+});
+
+// Ouvindo na porta 3333
+server.listen(3333);
+*/
+
+// Para executar o servidor, salve o código acima em um arquivo chamado `server.js` e execute o comando `node server.js` no terminal. O servidor estará ouvindo na porta 3333 e você poderá acessar a resposta "Hello World!" abrindo um navegador e digitando `http://localhost:3333` na barra de endereços.
 
 
 // ======================================================================
