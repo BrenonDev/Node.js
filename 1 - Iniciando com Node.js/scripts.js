@@ -120,3 +120,21 @@ console.log("=== EXECUTANDO UM ARQUIVO JAVASCRIPT ===")
 
 
 // ======================================================================
+
+
+console.log("=== IMPORT COM COMMONJS E ES MODULES ===")
+
+// O Node.js suporta dois sistemas de módulos: CommonJS e ES Modules. O CommonJS é o sistema de módulos tradicional do Node.js, enquanto os ES Modules são baseados na especificação ECMAScript e são mais recentes.
+
+// Para importar módulos usando CommonJS, você usa a função `require()`. Por exemplo:
+
+// const http = require("http");
+
+// Para importar módulos usando ES Modules, você usa a palavra-chave `import`. Por exemplo:
+
+// import http from "node:http";
+
+// A escolha entre CommonJS e ES Modules depende do seu projeto e das suas preferências. O CommonJS é amplamente utilizado em projetos Node.js existentes, enquanto os ES Modules são recomendados para novos projetos devido à sua compatibilidade com a especificação ECMAScript.
+
+
+// ======================================================================
