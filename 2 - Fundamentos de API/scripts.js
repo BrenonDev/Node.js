@@ -16,12 +16,24 @@ console.log("=== O QUE É UMA API ===");
 
 //  |--------------------------------------------------|
 //  |                                                  |
-//  |          https://meuservidor.com.br/products     |
-//  |           ^              ^              ^        |
-//  |           |              |              |        |
-//  |     protocolo | endereço do servidor | rota      |
+//  |         https://meuservidor.com.br/products      |
+//  |          ^              ^               ^        |
+//  |          |              |               |        |
+//  |    protocolo | endereço do servidor | rota       |
 //  |                                                  |
 //  |--------------padrão de comunicação---------------|
+
+
+// ======================================================================
+
+
+console.log("=== API CLIENT ===");
+
+// A API Client é o cliente que faz requisições para a API. Ele pode ser um navegador, um aplicativo móvel, ou qualquer outro software que precise interagir com a API.
+
+// Um exemplo de API Client é o Insomnia, que é uma ferramenta que permite enviar requisições HTTP para APIs e visualizar as respostas. Ele é muito útil para testar e depurar APIs durante o desenvolvimento.
+
+// Se executar um servidor localmente, você pode acessar a API Client através do endereço http://localhost:3333, onde 3333 é a porta em que o servidor está escutando.
 
 
 // ======================================================================
