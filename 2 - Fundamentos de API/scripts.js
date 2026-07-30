@@ -153,7 +153,7 @@ console.log("=== UTILIZANDO STATUS CODE ===");
 // Exemplo de como utilizar o status code em uma resposta HTTP em um servidor Node.js:
 
 /*
-import http from "node:http"; // módulo ES
+import http from "node:http";
 
 const server = http.createServer((request, response) => {
     const { method } = request;
@@ -165,3 +165,30 @@ server.listen(3333);
 
 
 // ======================================================================
+
+
+console.log("=== URL DA REQUISIÇÃO ===");
+
+// Para identificar a URL da requisição, podemos utilizar a propriedade `url` do objeto `request` no Node.js. Essa propriedade nos permite saber qual caminho o cliente está solicitando ao servidor, como /products, /users, etc.
+
+// Exemplo de como identificar a URL da requisição em um servidor Node.js:
+
+/*
+import http from "node:http";
+
+const server = http.createServer((request, response) => {
+    const { method, url } = request;
+
+    if (method === "GET" && url === "/products") {
+        return response.end("Lista de produtos...")
+    }
+
+    if (method === "POST" && url === "/products") {
+        return response.writeHead(201).end("Produto cadastrado!")
+    }
+
+    return response.writeHead(404).end("Rota não encontrada!")
+});
+
+server.listen(3333);
+*/
