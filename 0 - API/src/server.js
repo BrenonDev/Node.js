@@ -5,7 +5,8 @@
 import http from "node:http"; // módulo ES
 
 const server = http.createServer((request, response) => {
-    return response.end("Minha primeira API")
+    const { method } = request;
+    return response.end("Método: " + method)
 });
 
 server.listen(3333);

@@ -121,3 +121,27 @@ console.log("=== MÉTODOS HTTP ===");
 
 // 5xx => Erro no servidor
 //     500 => Erro interno
+
+
+// ======================================================================
+
+
+console.log("=== IDENTIFICANDO O MÉTODO HTTP ===");
+
+// Para identificar o método HTTP de uma requisição, podemos utilizar a propriedade `method` do objeto `request` no Node.js. Essa propriedade nos permite saber qual ação o cliente está solicitando ao servidor, como GET, POST, PUT, DELETE, etc.
+
+// Exemplo de como identificar o método HTTP em um servidor Node.js:
+
+/*
+import http from "node:http";
+
+const server = http.createServer((request, response) => {
+    const { method } = request;
+    return response.end("Método: " + method)
+});
+
+server.listen(3333);
+*/
+
+
+// ======================================================================
