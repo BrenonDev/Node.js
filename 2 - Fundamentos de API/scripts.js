@@ -37,3 +37,87 @@ console.log("=== API CLIENT ===");
 
 
 // ======================================================================
+
+
+console.log("=== MÉTODOS HTTP ===");
+
+// RELEMBRANDO
+
+//           Requisição
+//             ----->   
+//  [Client]            [API]
+//             <-----
+//            Resposta
+
+
+// MÉTODOS HTTP
+
+// Conjunto de métodos de requisição responsáveis por indicar a ação a ser executada.
+
+// GET
+// Leitura
+
+// POST
+// Criação
+
+// PUT
+// Atualizar
+
+// DELETE
+// Deletar
+
+// PATCH
+// Atualização Parcial
+
+
+// EXEMPLOS DE MÉTODOS HTTP
+
+// Mesma rota, porém ações diferentes.
+
+// [  GET  ]
+// [Leitura]  =>  https://meuservidor.com.br/products
+
+// [ POST  ]
+// [Criação]  =>  https://meuservidor.com.br/products
+
+
+// HTTP RESPONSE STATUS CODES
+
+// Os códigos de status de resposta HTTP indicam o status de uma solicitação. Por exemplo, se uma solicitação HTTP específica foi concluída com êxito.
+
+// 1xx
+// Respostas Informativas
+
+// 2xx
+// Sucesso
+
+// 3xx
+// Redirecionamento
+
+// 4xx
+// Erro do cliente
+
+// 5xx
+// Erro no servidor
+
+
+// EXEMPLOS
+
+// 1xx => Informativo
+//     102 => Processando
+
+// 2xx => Sucesso
+//     200 => Requisição bem sucedida
+//     201 => Criado - geralmente utilizado para o POST após uma inserção
+
+// 3xx => Redirecionamento
+//     301 => Movido permanentemente
+//     302 => Movido
+
+// 4xx => Erro do cliente
+//     400 => Bad Request
+//     401 => Não autorizado
+//     404 => Não encontrado
+
+// 5xx => Erro no servidor
+//     500 => Erro interno
