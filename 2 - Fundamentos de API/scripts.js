@@ -145,3 +145,23 @@ server.listen(3333);
 
 
 // ======================================================================
+
+console.log("=== UTILIZANDO STATUS CODE ===");
+
+// Para utilizar o status code em uma resposta HTTP, podemos usar o método `writeHead` do objeto `response` no Node.js. Esse método nos permite definir o código de status da resposta, indicando se a requisição foi bem-sucedida, se houve algum erro, entre outros.
+
+// Exemplo de como utilizar o status code em uma resposta HTTP em um servidor Node.js:
+
+/*
+import http from "node:http"; // módulo ES
+
+const server = http.createServer((request, response) => {
+    const { method } = request;
+    return response.writeHead(201).end("Criado com sucesso!")
+});
+
+server.listen(3333);
+*/
+
+
+// ======================================================================
