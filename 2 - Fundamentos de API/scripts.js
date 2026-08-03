@@ -258,3 +258,23 @@ server.listen(3333);
 
 
 // ======================================================================
+
+
+console.log("=== CONCEITO DE MIDDLEWARE ===");
+
+// Middleware é um conceito de software que se refere a uma camada intermediária entre diferentes componentes de um sistema. Ele atua como um "meio de campo" que processa, transforma ou gerencia dados e solicitações antes que eles cheguem ao destino final.
+
+// Em termos de desenvolvimento web, um middleware é uma função que recebe a requisição (request) e a resposta (response) como parâmetros, podendo realizar operações como autenticação, validação de dados, registro de logs, entre outras, antes de passar o controle para a próxima função ou rota.
+
+
+//  [Site] ----------> [Request] ----------> [Function]
+//                         |                     ^
+//                         |                     |
+//                         v                     |
+//              |    [Middleware] ----------------     |
+//              |                                      |
+//              |______________________________________|
+//                             back-end
+
+
+// ======================================================================
