@@ -214,3 +214,47 @@ console.log("=== COMO O NODE.JS LIDA COM REQUISIÇÕES HTTP ===");
 // COMO O NODE.JS LIDA COM REQUISIÇÕES HTTP
 
 // Quando uma requisição chega ao servidor, o corpo da requisição não é imediatamente disponível como uma propriedade simples. Isso ocorre porque o corpo pode ser grande e chega ao servidor como um fluxo (stream) de dados, dividido em pedaços (chunks).
+
+
+// ======================================================================
+
+
+console.log("=== RECUPERANDO DADOS DO BODY ===");
+
+// Para recuperar os dados do corpo (body) de uma requisição HTTP no Node.js, podemos utilizar um loop `for await...of` para iterar sobre os chunks de dados que chegam ao servidor. Em seguida, podemos concatenar esses chunks em um buffer e convertê-los em uma string para processar os dados recebidos.
+
+// Exemplo de como recuperar dados do body em um servidor Node.js:
+
+/*
+import http from "node:http"; 
+
+const server = http.createServer( async (request, response) => {
+    const { method, url } = request;
+
+    if (method === "GET" && url === "/products") {
+        return response.end("Lista de produtos...")
+    }
+
+    if (method === "POST" && url === "/products") {
+        const buffers = [];
+
+        for await (const chunk of request) {
+            buffers.push(chunk);
+        }
+
+        console.log(Buffer.concat(buffers).toString());
+        
+
+        return response.writeHead(201).end("Produto cadastrado!")
+    }
+
+    return response.writeHead(404).end("Rota não encontrada!")
+});
+
+server.listen(3333);
+*/
+
+// Assim, ao receber uma requisição POST para a rota /products, o servidor lê os chunks de dados do corpo da requisição, concatena-os em um buffer e os converte em uma string para exibir no console. Em seguida, ele envia uma resposta com o status code 201 (Criado) indicando que o produto foi cadastrado com sucesso.
+
+
+// ======================================================================
