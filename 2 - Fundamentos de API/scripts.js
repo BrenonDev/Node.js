@@ -192,3 +192,25 @@ const server = http.createServer((request, response) => {
 
 server.listen(3333);
 */
+
+
+// ======================================================================
+
+
+console.log("=== COMO O NODE.JS LIDA COM REQUISIÇÕES HTTP ===");
+
+
+// ENVIANDO DADOS
+
+// Quando um cliente (como um navegador) envia uma requisição HTTP para um servidor, essa requisição pode incluir dados em um corpo (body).
+
+/*
+{
+    "name": "Teclado",
+    "price": 120.50
+}
+*/
+
+// COMO O NODE.JS LIDA COM REQUISIÇÕES HTTP
+
+// Quando uma requisição chega ao servidor, o corpo da requisição não é imediatamente disponível como uma propriedade simples. Isso ocorre porque o corpo pode ser grande e chega ao servidor como um fluxo (stream) de dados, dividido em pedaços (chunks).
