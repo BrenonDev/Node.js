@@ -320,20 +320,84 @@ const server = http.createServer( async (request, response) => {
     await jsonBodyHandler(request, response);
 
     if (method === "GET" && url === "/products") {
-        return response.end("Lista de produtos...")
+        return response.end("Lista de produtos...");
     };
 
     if (method === "POST" && url === "/products") {
-        return response.writeHead(201).end(JSON.stringify(request.body))
+        return response.writeHead(201).end(JSON.stringify(request.body));
     };
 
-    return response.writeHead(404).end("Rota não encontrada!")
+    return response.writeHead(404).end("Rota não encontrada!");
 });
 
 server.listen(3333);
 */
 
 // Assim, ao receber uma requisição POST para a rota /products, o middleware `jsonBodyHandler` processa o corpo da requisição, convertendo os dados em JSON e armazenando-os na propriedade `request.body`. Em seguida, a rota pode acessar esses dados e enviar uma resposta adequada.
+
+
+// ======================================================================
+
+
+console.log("=== SEPARANDO AS ROTAS ===");
+
+// Para separar as rotas em um servidor Node.js, podemos criar um arquivo específico para definir as rotas e suas respectivas funções de controle. Em seguida, podemos importar essas rotas em um arquivo principal do servidor e utilizá-las para lidar com as requisições HTTP.
+
+// Exemplo de como separar as rotas em um servidor Node.js:
+
+// ARQUIVO routes.js:
+/*
+export const routes = [
+    {
+        method: "GET",
+        path: "/products",
+        controller: (request, response) => {
+            return response.end("Lista de produtos...");
+        },
+    },
+    {
+        method: "POST",
+        path: "/products",
+        controller: (request, response) => {
+            return response.writeHead(201).end(JSON.stringify(request.body));
+        },
+    },
+];
+*/
+
+// ARQUIVO routeHandler.js:
+/*
+import { routes } from "../routes.js";
+
+export function routeHandler(request, response) {
+    const route = routes.find((route) => {
+        return route.method === request.method && route.path === request.url;
+
+    });
+    
+    if (route) {
+        return route.controller(request, response);
+    };
+
+    return response.writeHead(404).end("Rota não encontrada!");
+};
+*/
+
+// ARQUIVO server.js:
+/*
+import http from "node:http";
+import { jsonBodyHandler } from "./middlewares/jsonBodyHandler.js";
+import { routeHandler } from "./middlewares/routeHandler.js";
+
+const server = http.createServer( async (request, response) => {
+    await jsonBodyHandler(request, response);
+    routeHandler(request, response);    
+});
+
+server.listen(3333);
+*/
+
+// Assim, ao receber uma requisição HTTP, o servidor utiliza o middleware `jsonBodyHandler` para processar o corpo da requisição e, em seguida, utiliza a função `routeHandler` para identificar a rota correspondente e executar a função de controle associada. Se a rota não for encontrada, o servidor retorna um status code 404 indicando que a rota não existe.
 
 
 // ======================================================================
