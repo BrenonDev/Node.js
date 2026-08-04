@@ -278,3 +278,62 @@ console.log("=== CONCEITO DE MIDDLEWARE ===");
 
 
 // ======================================================================
+
+
+console.log("=== UTILIZANDO MIDDLEWARE ===");
+
+// Para utilizar um middleware em um servidor Node.js, podemos criar uma função que recebe a requisição (request) e a resposta (response) como parâmetros. Essa função pode realizar operações específicas, como processar o corpo da requisição, antes de passar o controle para a próxima função ou rota.
+
+// Exemplo de como utilizar um middleware em um servidor Node.js:
+
+// ARQUIVO jsonBodyHandler.js:
+/*
+export async function jsonBodyHandler(request, response) {
+    // Adicionar cada chunk
+    const buffers = [];
+
+    // Coleta os chunks de dados da requisição
+    for await (const chunk of request) {
+        buffers.push(chunk);
+    };
+
+    try {
+        // Concatena os chunks e converte para string. Em seguinda, converte a string para JSON
+        request.body = JSON.parse(Buffer.concat(buffers).toString());
+    } catch (error) {
+        request.body = null;
+    };
+
+    // Define o header de resposta como JSON
+    response.setHeader("Content-Type", "application/json");
+};
+*/
+
+// ARQUIVO server.js:
+/*
+import http from "node:http";
+import { jsonBodyHandler } from "./middlewares/jsonBodyHandler.js"
+
+const server = http.createServer( async (request, response) => {
+    const { method, url } = request;
+
+    await jsonBodyHandler(request, response);
+
+    if (method === "GET" && url === "/products") {
+        return response.end("Lista de produtos...")
+    };
+
+    if (method === "POST" && url === "/products") {
+        return response.writeHead(201).end(JSON.stringify(request.body))
+    };
+
+    return response.writeHead(404).end("Rota não encontrada!")
+});
+
+server.listen(3333);
+*/
+
+// Assim, ao receber uma requisição POST para a rota /products, o middleware `jsonBodyHandler` processa o corpo da requisição, convertendo os dados em JSON e armazenando-os na propriedade `request.body`. Em seguida, a rota pode acessar esses dados e enviar uma resposta adequada.
+
+
+// ======================================================================
