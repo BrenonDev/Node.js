@@ -401,3 +401,39 @@ server.listen(3333);
 
 
 // ======================================================================
+
+
+console.log("=== ROUTE PARAMS ===");
+
+// Route Params são parâmetros que fazem parte da URL de uma requisição HTTP e são utilizados para identificar recursos específicos em uma API. Eles são definidos na rota utilizando dois pontos (:) seguidos do nome do parâmetro, e podem ser acessados no servidor através do objeto `request.params` no Node.js.
+
+// Exemplo de como utilizar Route Params em um servidor Node.js:
+
+// ARQUIVO routes.js:
+/*
+export const routes = [
+    {
+        method: "GET",
+        path: "/products",
+        controller: (request, response) => {
+            return response.end("Lista de produtos...");
+        },
+    },
+    {
+        method: "POST",
+        path: "/products",
+        controller: (request, response) => {
+            return response.writeHead(201).end(JSON.stringify(request.body));
+        },
+    },
+    {
+        method: "DELETE",
+        path: "/products/:id",
+        controller: (request, response) => {            
+            return response.end("Removido!");
+        },
+    },
+];
+*/
+
+// ======================================================================
