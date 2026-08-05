@@ -504,3 +504,11 @@ export const routes = [
 
 
 // ======================================================================
+
+
+console.log("=== PARÂMETROS NOMEADOS ===");
+
+// Os parâmetros nomeados são uma forma de capturar valores específicos de uma URL em uma rota, permitindo que você defina nomes para esses valores e os acesse de maneira mais legível e organizada. Os parâmetros na URL são definidos utilizando interrogação (?) e o nome do parâmetro, seguido do valor. Por exemplo, em uma URL como /products?category=computer, o parâmetro nomeado é "category" e seu valor é "computer". Para mais de um parâmetro, eles são separados por "&", como em /products?category=computer&price=5000.
+
+
+// ======================================================================
