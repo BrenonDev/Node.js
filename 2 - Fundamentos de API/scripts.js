@@ -512,3 +512,56 @@ console.log("=== PARÂMETROS NOMEADOS ===");
 
 
 // ======================================================================
+
+
+console.log("=== OBTENDO PARÂMETROS NOMEADOS ===");
+
+// Para obter os parâmetros nomeados de uma URL em uma requisição HTTP no Node.js, podemos utilizar a expressão regular para capturar os parâmetros da query string. Em seguida, podemos armazenar esses valores em um objeto e adicioná-los à propriedade `request.query` para que possam ser acessados pelas funções de controle das rotas.
+
+// Exemplo de como obter os parâmetros nomeados de uma URL em um servidor Node.js:
+
+// ARQUIVO parseRoutePath.js:
+/*
+export function parseRoutePath(path) {
+    const routeParametersRegex = /:([a-zA-Z]+)/g;
+
+    const params = path.replaceAll(routeParametersRegex, "(?<$1>[a-z0-9-_]+)");
+    
+    const pathRegex = new RegExp(`${params}(?<query>\\?(.*))?$`);
+
+    // console.log(pathRegex);
+    
+    return pathRegex;
+}
+*/
+
+// ARQUIVO routeHandler.js:
+/*
+import { routes } from "../routes.js";
+
+export function routeHandler(request, response) {
+    const route = routes.find((route) => {
+        return route.method === request.method && route.path.test(request.url);
+
+    });
+    
+    if (route) {
+        const routeParams = request.url.match(route.path);
+
+        console.log(routeParams);
+        
+        const { ...params } = routeParams.groups;
+        
+        request.params = params;
+        
+        return route.controller(request, response);
+    };
+
+    return response.writeHead(404).end("Rota não encontrada!");
+};
+*/
+
+// Assim, ao receber uma requisição GET para a rota /products?category=computer&price=5000, o middleware `routeHandler` identifica a rota correspondente, extrai os valores dos parâmetros nomeados da query string e os armazena na propriedade `request.query`. Em seguida, a função de controle associada à rota pode acessar esses valores e utilizá-los para realizar a ação desejada, como filtrar produtos com base na categoria e no preço.
+
+
+// ======================================================================
