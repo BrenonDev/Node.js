@@ -437,3 +437,70 @@ export const routes = [
 */
 
 // ======================================================================
+
+
+console.log("=== OBTENDO O PARÂMETRO ===");
+
+// Para obter o valor de um Route Param em uma requisição HTTP no Node.js, podemos utilizar a propriedade `params` do objeto `request`. Essa propriedade é preenchida pelo middleware responsável por identificar a rota e extrair os parâmetros da URL.
+
+// Exemplo de como obter o valor de um Route Param em um servidor Node.js:
+
+// ARQUIVO routeHandler.js:
+/*
+import { routes } from "../routes.js";
+
+export function routeHandler(request, response) {
+    const route = routes.find((route) => {
+        return route.method === request.method && route.path.test(request.url);
+
+    });
+    
+    if (route) {
+        const routeParams = request.url.match(route.path);
+        const { ...params } = routeParams.groups;
+        
+        request.params = params;
+        
+        return route.controller(request, response);
+    };
+
+    return response.writeHead(404).end("Rota não encontrada!");
+};
+*/
+
+// ARQUIVO routes.js:
+/*
+import { parseRoutePath } from "./utils/parseRoutePath.js"; 
+
+export const routes = [
+    {
+        method: "GET",
+        path: "/products",
+        controller: (request, response) => {
+            return response.end("Lista de produtos...");
+        },
+    },
+    {
+        method: "POST",
+        path: "/products",
+        controller: (request, response) => {
+            return response.writeHead(201).end(JSON.stringify(request.body));
+        },
+    },
+    {
+        method: "DELETE",
+        path: "/products/:id",
+        controller: (request, response) => {            
+            return response.end("Produto removido com ID: " + request.params.id);
+        },
+    },
+].map((route) => ({
+    ...route,
+    path: parseRoutePath(route.path),
+}));
+*/
+
+// Assim, ao receber uma requisição DELETE para a rota /products/:id, o middleware `routeHandler` identifica a rota correspondente, extrai o valor do parâmetro `id` da URL e o armazena na propriedade `request.params`. Em seguida, a função de controle associada à rota pode acessar esse valor e utilizá-lo para realizar a ação desejada, como remover um produto específico do banco de dados.
+
+
+// ======================================================================
