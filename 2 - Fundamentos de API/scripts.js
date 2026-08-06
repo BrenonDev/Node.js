@@ -565,3 +565,86 @@ export function routeHandler(request, response) {
 
 
 // ======================================================================
+
+
+console.log("=== SEPARANDO PARÂMETROS ===");
+
+// Para separar os parâmetros nomeados de uma URL em uma requisição HTTP no Node.js, podemos criar uma função que recebe a query string como entrada e retorna um objeto contendo os pares chave-valor dos parâmetros. Essa função pode ser utilizada no middleware `routeHandler` para processar a query string e armazenar os parâmetros na propriedade `request.query`.
+
+// Exemplo de como separar os parâmetros nomeados de uma URL em um servidor Node.js:
+
+// ARQUIVO extractQueryParams.js:
+/*
+export function extractQueryParams(query) {
+
+    return query.slice(1).split("&").reduce((queryParams, param) => {
+
+        const [key, value] = param.split("=");
+
+        queryParams[key] = value;
+
+        return queryParams
+    }, {});
+};
+*/
+
+// ARQUIVO routeHandler.js:
+/*
+import { routes } from "../routes.js";
+import { extractQueryParams } from "../utils/extractQueryParams.js";
+
+export function routeHandler(request, response) {
+    const route = routes.find((route) => {
+        return route.method === request.method && route.path.test(request.url);
+
+    });
+    
+    if (route) {
+        const routeParams = request.url.match(route.path);
+        
+        const { query, ...params } = routeParams.groups;
+        
+        request.params = params;
+        
+        request.query = query ? extractQueryParams(query) : {};
+        
+        return route.controller(request, response);
+    };
+
+    return response.writeHead(404).end("Rota não encontrada!");
+};
+*/
+
+// ARQUIVO routes.js:
+/*
+import { parseRoutePath } from "./utils/parseRoutePath.js"; 
+
+export const routes = [
+    {
+        method: "GET",
+        path: "/products",
+        controller: (request, response) => {
+            return response.end(JSON.stringify(request.query));
+        },
+    },
+    {
+        method: "POST",
+        path: "/products",
+        controller: (request, response) => {
+            return response.writeHead(201).end(JSON.stringify(request.body));
+        },
+    },
+    {
+        method: "DELETE",
+        path: "/products/:id",
+        controller: (request, response) => {            
+            return response.end("Produto removido com ID: " + request.params.id);
+        },
+    },
+].map((route) => ({
+    ...route,
+    path: parseRoutePath(route.path),
+}));
+*/
+
+// Assim, ao receber uma requisição GET para a rota /products?category=computer&price=5000, o middleware `routeHandler` identifica a rota correspondente, extrai os valores dos parâmetros nomeados da query string utilizando a função `extractQueryParams`, e os armazena na propriedade `request.query`. Em seguida, a função de controle associada à rota pode acessar esses valores e utilizá-los para realizar a ação desejada, como filtrar produtos com base na categoria e no preço.
